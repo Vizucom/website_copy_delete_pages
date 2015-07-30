@@ -13,7 +13,13 @@ class Website(openerp.addons.web.controllers.main.Home):
 
     @http.route('/website/copy/<path:path>', type='http', auth="user", website=True)
     def pagecopy(self, path, noredirect=False, current_page=None):
-        xml_id = request.registry['website'].copy_page(request.cr, request.uid, path, current_page, context=request.context)
+
+        # FIXME: This would be better handled in the front-end (for example show the menu item only for Pages)
+        try:
+            xml_id = request.registry['website'].copy_page(request.cr, request.uid, path, current_page, context=request.context)
+        except ValueError as ve:
+            ve.message='Copy failed - please note that you can only copy pages (not e.g. products, shops or blogs) '
+            raise
 
         model, id  = request.registry["ir.model.data"].get_object_reference(request.cr, request.uid, 'website', 'main_menu')
 
@@ -43,7 +49,14 @@ class Website(openerp.addons.web.controllers.main.Home):
 
     @http.route('/website/delete/<path:path>', type='http', auth="user", website=True)
     def pagedelete(self, path, noredirect=False):
-        xml_id = request.registry['website'].delete_page(request.cr, request.uid, path, context=request.context)
+
+        # FIXME: This would be better handled in the front-end (for example show the menu item only for Pages)
+        try:
+            xml_id = request.registry['website'].delete_page(request.cr, request.uid, path, context=request.context)
+        except ValueError as ve:
+            ve.message='Delete failed - please note that you can only delete pages (not e.g. products, shops or blogs) '
+            raise
+
         url = "/page/%s" % (xml_id)
 
         # Query database with url of page to be deleted as search index in SQL statement.
