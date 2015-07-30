@@ -1,32 +1,31 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 {
-    'name': 'Website Builder',
+    'name': 'Website - Copy and Delete Pages',
     'category': 'Website',
-    'summary': 'Build Your Enterprise Website',
-    'website': 'https://www.odoo.com/page/website-builder',
     'version': '1.0',
+    'author': 'Wang Hee Shiong & Vizucom Oy',
+    'website': 'http://www.vizucom.com',
+    'depends': ['website'],
     'description': """
-OpenERP Website CMS
-===================
-
-        """,
-    'author': 'OpenERP SA',
-    'depends': ['web', 'share', 'mail'],
-    'installable': True,
+Accordion Block for Website
+===========================
+ * Provides the option to copy and delete website pages directly from Odoo frontend
+ * Based on the module by Wang Hee Shiong, available at https://github.com/dapoaugury/odoo/tree/website_edit
+ * See also https://www.odoo.com/en_UK/groups/community-framework-62/community-framework-11690036 
+""",
     'data': [
-        'data/data.xml',
-        'security/ir.model.access.csv',
-        'security/ir_ui_view.xml',
         'views/website_templates.xml',
-        'views/website_views.xml',
-        'views/snippets.xml',
-        'views/themes.xml',
-        'views/res_config.xml',
-        'views/ir_actions.xml',
         'views/website_backend_navbar.xml',
     ],
-    'demo': [
-        'data/demo.xml',
-    ],
-    'qweb': ['static/src/xml/website.backend.xml'],
-    'application': True,
 }
