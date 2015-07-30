@@ -18,8 +18,8 @@
     'website': 'http://www.vizucom.com',
     'depends': ['website'],
     'description': """
-Accordion Block for Website
-===========================
+Website - Copy and Delete Pages
+===============================
  * Provides the option to copy and delete website pages directly from Odoo frontend
  * Based on the module by Wang Hee Shiong, available at https://github.com/dapoaugury/odoo/tree/website_edit
  * See also https://www.odoo.com/en_UK/groups/community-framework-62/community-framework-11690036 

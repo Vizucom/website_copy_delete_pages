@@ -74,4 +74,3 @@ class website(osv.osv):
             logger.info("Page deletion has failed, external ID not found in the system: {%s}", template)
 
         return page_xmlid
-

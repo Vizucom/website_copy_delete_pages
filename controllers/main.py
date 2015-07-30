@@ -71,6 +71,3 @@ class Website(openerp.addons.web.controllers.main.Home):
         if noredirect:
             return werkzeug.wrappers.Response(url, mimetype='text/plain')
         return werkzeug.utils.redirect(url)
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
