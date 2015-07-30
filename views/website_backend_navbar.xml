@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-        <!-- Add the menu items for copying/deleting-->
+        <!-- Add the menu items for copying/deleting -->
         <template id="user_navbar_inherit" inherit_id="website.user_navbar" groups="base.group_user">
-            <xpath expr="//ul[contains(@class,'oe_content_menu')]" position="inside">
+            <xpath expr="//ul[contains(@class,'oe_content_menu')]/li[3]" position="after">
                 <li groups="base.group_website_designer"><a href="#" data-action="copy_page">Copy Page</a></li>
                 <li groups="base.group_website_designer"><a href="#" data-action="delete_page">Delete Page</a></li>
             </xpath>
